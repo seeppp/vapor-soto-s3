@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -11,11 +11,12 @@ let package = Package(
     products: [
         .library(
             name: "SotoS3Kit",
-            targets: ["SotoS3Kit"]),
+            targets: ["SotoS3Kit"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
-        .package(url: "https://github.com/soto-project/soto.git", from: "5.0.0"),
+        .package(url: "https://github.com/soto-project/soto.git", from: "6.0.0"),
     ],
     targets: [
         .target(name: "SotoS3Kit", dependencies: [
@@ -23,7 +24,7 @@ let package = Package(
             .product(name: "SotoS3", package: "soto"),
         ]),
         .testTarget(name: "SotoS3KitTests", dependencies: [
-            .target(name: "SotoS3Kit")
+            .target(name: "SotoS3Kit"),
         ]),
     ]
 )
